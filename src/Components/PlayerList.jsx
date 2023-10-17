@@ -1,10 +1,15 @@
 import Player from "./Player";
 import styled from "styled-components";
 
+const Cardgap = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+`;
+
 function PlayerList({ playList }) {
-  // console.log(playList);
   return (
-    <div>
+    <Cardgap>
       {playList.map((joueur) => (
         <Player
           key={joueur.playerName}
@@ -16,7 +21,7 @@ function PlayerList({ playList }) {
           isFavorit={joueur.isFavorite}
         />
       ))}
-    </div>
+    </Cardgap>
   );
 }
 
